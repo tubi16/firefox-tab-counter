@@ -1,6 +1,6 @@
-function updateTabCount() {
+function updateTabCount(x) {
     browser.tabs.query({currentWindow: true}).then(tabs => {
-            tabCount = tabs.length
+            tabCount = tabs.length + x
             browser.browserAction.setBadgeText(
                 {text: tabCount.toString()}
             )
@@ -10,16 +10,16 @@ function updateTabCount() {
 }
 
 browser.tabs.onAttached.addListener(() => {
-        updateTabCount()
+        updateTabCount(0)
     });
 browser.tabs.onCreated.addListener(() => {
-        updateTabCount()
+        updateTabCount(0)
     });
 browser.tabs.onDetached.addListener(() => {
-        updateTabCount()
+        updateTabCount(-1)
     });
 browser.tabs.onRemoved.addListener(() => {
-        updateTabCount()
+        updateTabCount(-1)
     });
 
 browser.runtime.onInstalled.addListener(() => {
