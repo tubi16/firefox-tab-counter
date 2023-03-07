@@ -4,14 +4,14 @@
     "version": "1.0",
     "browser_specific_settings": {
         "gecko": {
-          "update_url": "https://raw.githubusercontent.com/Solarflame5/firefox-tab-counter/master/updates.json"
+            "update_url": "https://raw.githubusercontent.com/Solarflame5/firefox-tab-counter/master/updates.json"
         }
-      },
+    },
     
     "icons": {
         "48": "icons/tab_dark.svg",
         "96": "icons/tab_dark.svg"
-      },
+    },
       
     "permissions": [
         "tabs"
